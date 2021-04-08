@@ -45,7 +45,7 @@ setopt hist_verify            # show command with history expansion to user befo
 #setopt share_history         # share command history data
 
 # force zsh to show the complete history
-alias history="history 0"
+# alias history="history 0"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -216,6 +216,7 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt upgrade -y'
 alias autoremove='sudo apt autoremove -y'
 alias up='sudo apt-get update && sudo apt upgrade -y'
+alias distup='sudo apt-get dist-upgrade'
 
 
 ######################
@@ -226,7 +227,7 @@ alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias purge='sudo apt-get remove --purge'
 alias clean='sudo apt autoremove && sudo apt autoclean'
-
+alias dpkg-in='sudo dpkg -i'
 
 #######
 # DIR #
@@ -260,6 +261,17 @@ alias a='alias'
 alias c='clear'
 alias e='exit'
 alias source='source ~/.zshrc'
+alias n='sudo nano'
+alias die='shutdown -P 0'
+alias restart='shutdown -r 0'
+alias hist-c='sudo rm -r ~/.zsh_history && sudo rm -r ~/.bash_history'
+alias pls='sudo'
+alias su='sudo su'
+alias rm='rm -r'
+alias subl='subl -a'
+
+
+
 
 #######
 # GIT #
@@ -278,6 +290,22 @@ alias iwc='iwconfig'
 alias pktstat='sudo pktstat -tBFT'
 
 
+
+#################################
+# TO SHOW ALL RUNNING PROCESSES #
+#################################
+
+alias ps='ps -aux'
+
+
+##############
+# METASPLOIT #
+##############
+
+alias metadb='sudo systemctl start postgresql'
+alias meta='msfconsole'
+
+
 ##############
 # EXTRACTING #
 ##############
@@ -291,7 +319,7 @@ extract () {
           *.tar.bz2)   tar xvjf $1    ;;
           *.tar.gz)    tar xvzf $1    ;;
           *.bz2)       bunzip2 $1     ;;
-          *.rar)       rar x $1       ;;
+          *.rar)       unrar e $1     ;;
           *.gz)        gunzip $1      ;;
           *.tar)       tar xvf $1     ;;
           *.tbz2)      tar xvjf $1    ;;
@@ -306,9 +334,6 @@ extract () {
 
  fi
 }
-
-
-
 
 
 
