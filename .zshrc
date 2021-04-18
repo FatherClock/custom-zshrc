@@ -267,10 +267,6 @@ alias restart='shutdown -r 0'
 alias hist-c='sudo rm -r ~/.zsh_history && sudo rm -r ~/.bash_history'
 alias pls='sudo'
 alias su='sudo su'
-alias rm='rm -r'
-alias subl='subl -a'
-
-
 
 
 #######
@@ -290,22 +286,6 @@ alias iwc='iwconfig'
 alias pktstat='sudo pktstat -tBFT'
 
 
-
-#################################
-# TO SHOW ALL RUNNING PROCESSES #
-#################################
-
-alias ps='ps -aux'
-
-
-##############
-# METASPLOIT #
-##############
-
-alias metadb='sudo systemctl start postgresql'
-alias meta='msfconsole'
-
-
 ##############
 # EXTRACTING #
 ##############
@@ -319,7 +299,7 @@ extract () {
           *.tar.bz2)   tar xvjf $1    ;;
           *.tar.gz)    tar xvzf $1    ;;
           *.bz2)       bunzip2 $1     ;;
-          *.rar)       unrar e $1     ;;
+          *.rar)       rar x $1       ;;
           *.gz)        gunzip $1      ;;
           *.tar)       tar xvf $1     ;;
           *.tbz2)      tar xvjf $1    ;;
@@ -337,44 +317,9 @@ extract () {
 
 
 
+##############
+# METASPLOIT #
+##############
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alias metadb='sudo systemctl start postgresql'
+alias meta='msfconsole'
